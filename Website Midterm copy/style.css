@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/*
+ * By Riciery Santos Leal
+ */
+@font-face {
+  font-display: block;
+  font-family: "VCR OSD Mono";
+  src: url("https://type.cargo.site/files/VCROSD-Mono.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+
+/*
+ * This CSS file has been generated and is served by Cargo Collective Inc
+ * and is authorized to be used on Cargo Collective Inc only. 
+ *
+ * This CSS resource incorporates links to font software which is 
+ * the valuable copyrighted property of WebType LLC, The Font Bureau 
+ * and/or their suppliers. You may not 
+ * attempt to copy, install, redistribute, convert, modify or reverse 
+ * engineer this font software. Please contact WebType with any 
+ * questions: http://www.webtype.com 
+ */
+
+@font-face {
+  font-display: block;
+  font-family: "DINosaur";
+  src: url("https://type.cargo.site/files/DINosaur-Book.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+@font-face {
+  font-display: block;
+  font-family: "DINosaur";
+  src: url("https://type.cargo.site/files/DINosaur-BookItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: normal;
+  unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+@font-face {
+  font-display: block;
+  font-family: "DINosaur";
+  src: url("https://type.cargo.site/files/DINosaur-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+  unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+@font-face {
+  font-display: block;
+  font-family: "DINosaur";
+  src: url("https://type.cargo.site/files/DINosaur-BoldItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: bold;
+  unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*font-family: 'Poppins', sans-serif;*/
+  font-family: 'VCR OSD Mono';
+  /*background-color: #556;*/
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logoimg{
+  position: relative;
+  margin-right: auto;
+  width: 60px;
+  height: 60px;
+  background: url("icons/logo_pix.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: center;
+  cursor: pointer; 
+}
+
+
+.toggle{
+  position: relative;
+  width: 30px;/*60px*/
+  height: 30px;/*60px*/
+  background: url("icons/menu.png");
+  /*background-repeat: no-repeat;*/
+  background-size: 10px; /*30px*/
+  background-position: center;
+  cursor: pointer;
+}
+
+.toggle.active{
+  background: url("icons/close_pix.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.showcase
+{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: #fff;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.showcase.active
+{
+  /*background: #111;*/
+  right: 300px;
+}
+
+.showcase video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1); 
+  filter: grayscale(100%); 
+  /*z-index: 1;*/
+}
+
+.overlay
+{
+  background-image: url("icons/hexed.png");
+  background-size: 8px 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+/* background: #03a9f4;*/
+ /* mix-blend-mode: overlay;*/
+  /*image-rendering: pixelated;*/
+  background-position: center;
+  z-index: 10;
+}
+
+.text{
+  position: relative;
+  z-index: 10;
+}
+
+.text h2{
+  font-size: 5em;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.text h3{
+  font-size: 4em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.text p{
+  font-size: 1.1em;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+}
+
+.text a{
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+
+.text a:hover{
+  letter-spacing: 6px;
+}
+
+.social{
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social li{
+  list-style: none;
+}
+
+.social li a{
+  display: inline-block;
+  margin-right: 20px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+
+.social li a:hover{
+  transform: scale(0.5) translateY(-15px);
+}
+
+.menu{
+  background: #111;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul{
+  position: relative;
+}
+
+.menu ul li{
+  list-style: none;
+}
+
+.menu ul li a{
+  text-decoration: none;
+  font-size: 24px;
+  color: #fff;
+}
+
+.menu ul li a:hover{
+  color: #03a9f4;
+  /*letter-spacing: 2px; */
+}
+
+
+.content{
+  right: 0;
+  width: 100%;
+  /*min-height: 100vh;*/
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  /*right: 100;*/
+  /*top: 1000px;*/
+ /* width: 100%;
+  height: 100%;*/
+  /*overflow: auto;*/
+  
+  flex-direction: row;
+  justify-content: space-evenly;
+  /*align-items: center;*/
+  background: #111;
+  color: #fff;
+  /*box-sizing: border-box;*/
+  padding-top: 102vh;
+  padding-right: 50px;
+  padding-left: 50px;
+  transition: 0.5s;
+  z-index: -1000;
+  flex-wrap: wrap
+}
+
+.items{
+    /*flex: 1;*/
+    background: #111;
+    /*padding: 50px 50px;*/
+
+  width: 32%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  /*padding-bottom: 32%;*/
+  /*margin-bottom: 2%;*/
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*flex-wrap: wrap;*/
+  align-items: center;
+    /*width: -moz-max-content;
+    /*display: flex;
+    /*flex-direction: row;*/
+    
+    /*gap: 40px;*/
+    /*justify-content: space-evenly;
+    align-items: baseline;*/
+/*padding-right: 100px;*/*/
+    /*width: 100%;
+    height: auto;*/
+}
+
+.items img{
+  /*display: block;*/
+  margin-left: auto;
+  margin-right: auto;
+   border-style: none;
+  width: 90%;
+  height: 90%; 
+  /*align-self: center;*/
+ 
+}
+
+.items figcaption {
+    font-family:DINosaur ;
+    font-style: normal;
+    color: #999;
+   /* text-align: left;*/
+    /*margin-left: 20px;*/
+    /*left-padding: 20px;*/
+    padding-top: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    }
+
+
+
+@media (max-width: 991px){
+  .showcase, .showcase header{
+    padding: 40px;
+  }
+  
+  .text h2{
+    font-size: 3em;}
+  
+  .text h3{
+    font-size: 2em;
+  }
+
+
+
+@media (max-width: 800px) {
+  .items, {
+    flex: 50%;
+    max-width: 50%;
+    max-height: 50%;
+  }
+}
+ /* figcaption {
+    font-size: 0.5em;
+  }*/
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+ .items {
+    flex: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+/*figcaption {
+    font-size: 1em;
+  }*/
+
+ 
+
+
