@@ -64,10 +64,13 @@
   /*font-family: 'Poppins', sans-serif;*/
   font-family: 'VCR OSD Mono';
   /*background-color: #556;*/
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: proximity;
 }
 
 header{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -169,6 +172,7 @@ header .logo{
   /*image-rendering: pixelated;*/
   background-position: center;
   z-index: 10;
+  background-attachment: fixed;
 }
 
 .text{
@@ -351,6 +355,54 @@ header .logo{
     letter-spacing: 2px;
     text-transform: uppercase;
     }
+
+.scroll {
+  scroll-snap-align: center;
+}
+
+
+/* .fade {
+  transition: opacity 0.8s ease-in-out ;
+} */
+
+/* .fade {
+  margin: 50px;
+  padding: 50px;
+  background-color: lightgreen;
+  opacity: 1;
+} */
+
+.fade-in{
+  opacity: 0;
+  transition: opacity 800ms ease-in-out, transform 1s ease-in-out;
+  transform: translateY(50%);
+}
+
+.fade-in.appear{
+  opacity:1;
+  transform: translateY(0);
+}
+
+
+.projectContent{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 500px;
+  padding: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(88, 61, 61);
+  color: #fff;
+  /* transition: 0.5s; */
+  z-index: -1000;
+}
+
+.projectImage iframe{
+ 
+}
 
 
 
