@@ -1,11 +1,42 @@
 const app = {
   initialize: () => {
+    app.unlockPosition();
     app.client = contentful.createClient({
       // This is the space ID. A space is like a project folder in Contentful terms
       space: "w87f3kszgvam",
       // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
       accessToken: "i-Ujj7hQYGiPsKumaa_Cl9fb0aQcvGgKfYAYfqWje78"
     });
+  },
+
+  unlockPosition: () => {
+    const appearOptions = {
+      threshold: 0,
+    };
+
+    const unlockOnScroll = new IntersectionObserver(function(
+      entries,
+      appearOnScroll
+    ) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          console.log(entry)
+          if (entry.boundingClientRect.y > 0) {
+            document.querySelector('.showcase video').style.position = 'absolute';
+
+          } else {
+            document.querySelector('.showcase video').style.position = 'fixed';
+
+          }
+         // appearOnScroll.unobserve(entry.target);
+        }
+      });
+    },
+    appearOptions);
+    const observedElement = document.querySelector('.social');
+    unlockOnScroll.observe(observedElement);
   },
 
   // fetch a particular project
@@ -60,8 +91,38 @@ const app = {
         const rendered = Mustache.render(template, projectData);
         // add the element to the container
         $('.content').append(rendered);
+        // app.addIntersectionListener(rendered)
       });
+    }).then(() => {
+      app.addIntersectionListener();
     });
+  },
+
+  addIntersectionListener: () => {
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0,
+      rootMargin: "0px 0px 100px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries,
+      appearOnScroll
+    ) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add("appear");
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    },
+    appearOptions);
+    
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    })
   },
 
   // getEntriesByTag: async tag => {
@@ -127,28 +188,4 @@ const menuToggle = document.querySelector('.toggle');
 
 
 
-const faders = document.querySelectorAll(".fade-in");
 
-const appearOptions = {
-  threshold: 0,
-  rootMargin: "0px 0px 100px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(
-  entries,
-  appearOnScroll
-) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
-      entry.target.classList.add("appear");
-      // appearOnScroll.unobserve(entry.target);
-    }
-  });
-},
-appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});

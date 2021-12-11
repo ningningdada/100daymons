@@ -12,18 +12,6 @@
   unicode-range: U+0000-DFFF, U+F900-FFFD;
 }
 
-/*
- * This CSS file has been generated and is served by Cargo Collective Inc
- * and is authorized to be used on Cargo Collective Inc only. 
- *
- * This CSS resource incorporates links to font software which is 
- * the valuable copyrighted property of WebType LLC, The Font Bureau 
- * and/or their suppliers. You may not 
- * attempt to copy, install, redistribute, convert, modify or reverse 
- * engineer this font software. Please contact WebType with any 
- * questions: http://www.webtype.com 
- */
-
 @font-face {
   font-display: block;
   font-family: "DINosaur";
@@ -57,6 +45,12 @@
   unicode-range: U+0000-DFFF, U+F900-FFFD;
 }
 
+
+
+
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -82,6 +76,13 @@ header{
 }
 
 header .logo{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logo a{
+  text-decoration: none;
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
@@ -121,7 +122,7 @@ header .logo{
 
 .showcase
 {
-  position: absolute;
+  /* position: absolute; */
   right: 0;
   width: 100%;
   min-height: 100vh;
@@ -143,7 +144,7 @@ header .logo{
 
 .showcase video
 {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -223,9 +224,10 @@ header .logo{
 }
 
 .social{
-  position: absolute;
+  position: relative;
+  margin-top: 1200px;
   z-index: 10;
-  bottom: 20px;
+  /* bottom: 20px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,12 +288,6 @@ header .logo{
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  /*right: 100;*/
-  /*top: 1000px;*/
- /* width: 100%;
-  height: 100%;*/
-  /*overflow: auto;*/
-  
   flex-direction: row;
   justify-content: space-evenly;
   /*align-items: center;*/
@@ -307,31 +303,21 @@ header .logo{
 }
 
 .items{
-    /*flex: 1;*/
-    background: #111;
-    /*padding: 50px 50px;*/
-
+  background: #111;
   width: 32%;
   padding-top: 1%;
   padding-bottom: 1%;
-  /*padding-bottom: 32%;*/
-  /*margin-bottom: 2%;*/
   position: relative;
   display: flex;
   flex-direction: column;
-  /*flex-wrap: wrap;*/
   align-items: center;
-    /*width: -moz-max-content;
-    /*display: flex;
-    /*flex-direction: row;*/
-    
-    /*gap: 40px;*/
-    /*justify-content: space-evenly;
-    align-items: baseline;*/
-/*padding-right: 100px;*/*/
-    /*width: 100%;
-    height: auto;*/
 }
+
+/* .links{
+  margin-left: auto;
+  margin-right: auto;
+   border-style: none;
+} */
 
 .items img{
   /*display: block;*/
@@ -344,7 +330,7 @@ header .logo{
  
 }
 
-.items figcaption {
+.tag figcaption {
     font-family:DINosaur ;
     font-style: normal;
     color: #999;
@@ -354,7 +340,12 @@ header .logo{
     padding-top: 20px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-decoration-line: none;
     }
+
+a:link, a:visited {
+  text-decoration: none;
+}
 
 .scroll {
   scroll-snap-align: center;
@@ -383,7 +374,6 @@ header .logo{
   transform: translateY(0);
 }
 
-
 .projectContent{
   position: absolute;
   right: 0;
@@ -400,9 +390,13 @@ header .logo{
   z-index: -1000;
 }
 
-.projectImage iframe{
+/* .projectImage iframe{
  
-}
+} */
+
+
+
+
 
 
 
