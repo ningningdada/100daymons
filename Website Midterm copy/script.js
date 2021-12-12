@@ -11,7 +11,7 @@ const app = {
 
   unlockPosition: () => {
     const appearOptions = {
-      threshold: 0,
+      threshold: 1,
     };
 
     const unlockOnScroll = new IntersectionObserver(function(
@@ -81,8 +81,9 @@ const app = {
       // go through each one
       response.items.forEach(project => {
         // pull out the data you're interested in
-        // debugger;
+        //debugger;
         const projectData = {
+          order: project.fields.flexOrder,
           title: project.fields.title,
           imageUrl: `http:${project.fields.thumbnail.fields.file.url}`,
           imageTitle: project.fields.thumbnail.fields.title,
@@ -160,6 +161,14 @@ const menuToggle = document.querySelector('.toggle');
         menuToggle.classList.toggle('active');
         showcase.classList.toggle('active');
       })
+
+// const menuToggleProject = document.querySelector('.toggle1');
+//       const showcase1 = document.querySelector('.showcase1');
+
+//       menuToggleProject.addEventListener('click', () => {
+//         menuToggleProject.classList.toggle1('active');
+//         showcase1.classList.toggle1('active');
+//       })
 
 // let video = document. getElementById("bgVideo");
 // // let video = document.querySelector('video');

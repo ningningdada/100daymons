@@ -122,7 +122,7 @@ header .logo{
 
 .showcase
 {
-  /* position: absolute; */
+  position: absolute;
   right: 0;
   width: 100%;
   min-height: 100vh;
@@ -144,7 +144,8 @@ header .logo{
 
 .showcase video
 {
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -224,10 +225,11 @@ header .logo{
 }
 
 .social{
-  position: relative;
-  margin-top: 1200px;
+  /* position: relative; */
+  position: absolute;
+  /* margin-top: 1200px; */
   z-index: 10;
-  /* bottom: 20px; */
+  bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,11 +288,12 @@ header .logo{
   width: 100%;
   /*min-height: 100vh;*/
   position: absolute;
+  /* position: relative; */
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-evenly;
-  /*align-items: center;*/
+  /* align-items: flex-end; */
   background: #111;
   color: #fff;
   /*box-sizing: border-box;*/
@@ -311,6 +314,7 @@ header .logo{
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* align-self: flex-end; */
 }
 
 /* .links{
@@ -374,25 +378,230 @@ a:link, a:visited {
   transform: translateY(0);
 }
 
-.projectContent{
+
+/* project page */
+
+.showcase1 header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showcase1 header .logo1{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logo1 a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logoimg1{
+  position: relative;
+  margin-right: auto;
+  width: 60px;
+  height: 60px;
+  background: url("icons/logo_pix.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: center;
+  cursor: pointer; 
+}
+
+.toggle1{
+  position: relative;
+  width: 30px;/*60px*/
+  height: 30px;/*60px*/
+  background: url("icons/menu.png");
+  /*background-repeat: no-repeat;*/
+  background-size: 10px; /*30px*/
+  background-position: center;
+  cursor: pointer;
+}
+
+.toggle1.active1{
+  background: url("icons/close_pix.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.showcase1
+{
   position: absolute;
   right: 0;
   width: 100%;
   min-height: 100vh;
-  margin-top: 500px;
-  padding: 200px;
+  padding: 100px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: rgb(88, 61, 61);
+  background: #111;
   color: #fff;
-  /* transition: 0.5s; */
-  z-index: -1000;
+  transition: 0.5s;
+  /* z-index: -2; */
 }
 
-/* .projectImage iframe{
+.showcase1.active1
+{
+  /*background: #111;*/
+  right: 300px;
+}
+
+
+.projectContent{
+  display: flex;  
+  flex-direction: column;
+  padding: 100px;
+  justify-content: space-between;
+  /* align-items: center; */ 
+  background: #111;
  
+}
+
+.projectVideo{
+  /* overflow: hidden; */
+  margin-top: 5em;
+  padding-top: 56.25%;
+  padding-right: 0%;
+  /* margin-top: 0vh; */
+  /* padding:100% 0 100% 0;  */
+  position:relative;
+  order:1;
+  /* background-color: rgb(39, 44, 44); */
+  background-image: url("icons/hexed.png");
+  background-size: 8px 8px;
+  /* background-color: rgb(39, 41, 41); */
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; */
+  background-position: center;
+  z-index: 0;
+  background-attachment: fixed;
+}
+
+.projectTitle{
+  padding-top: 2em;
+  order:3;
+  z-index: 100;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  /* font-size: 28px;
+  color: #fff; */
+  /* padding: 10px 30px; */
+  text-decoration: none;
+  /* margin-top: 10px; */
+  letter-spacing: 2px;
+}
+
+.projectDescription{
+  padding-top: 3em;
+  line-height: 1.5em;
+  order:4;
+  color: #999;
+  z-index: 100;
+  text-transform: uppercase;
+
+}
+.projectDescription p{
+  font-family: "DINosaur";
+  font-style: normal;
+  font-size: 1em;
+  
+}
+
+.social1{
+  /* position: relative; */
+  /* align-self:baseline; */
+  /* position: absolute; */
+  /* top: 100px; */
+  /* z-index: 10; */
+  padding-top: 100px;
+  bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  order:5;
+}
+
+.social1 li{
+  list-style: none;
+}
+
+.social1 li a{
+  display: inline-block;
+  margin-right: 20px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+
+.social1 li a:hover{
+  transform: scale(0.5) translateY(-15px);
+}
+
+.menue{
+  /* background: #111; */
+  position: relative;
+  /* top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%; */
+  float: right;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+}
+
+.menue a{
+  font-family: "DINosaur";
+  font-style: normal;
+  text-transform: uppercase;
+  color: #eee;
+  font-size: 1em;
+}
+
+/* .menue ul{
+  list-style-type: none;
+  float: left;
+  position: relative;
+}
+
+.menue ul li{
+  list-style: none;
+}
+
+.menue ul li a{
+  text-decoration: none;
+  font-size: 24px;
+  color: #fff;
 } */
+
+/* .menue ul li a:hover{
+  color: #03a9f4;
+  /*letter-spacing: 2px; */
+/* }  */
 
 
 
