@@ -58,7 +58,7 @@
   /*font-family: 'Poppins', sans-serif;*/
   font-family: 'VCR OSD Mono';
   /*background-color: #556;*/
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
   scroll-snap-type: proximity;
 }
