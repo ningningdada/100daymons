@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mideterm Project</title>
+	<title>Final Project</title>
 	<link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,12 +12,12 @@
 	<section class="showcase">
    
 	    <header>
-	      <h2 class="logo">100DAYMONS</h2>
-	      <div class="logoimg"></div>
+	      <h2 class="logo"><a href="index.html">100DAYMONS</a></h2>
+		 <div class="logoimg"></div>
 	      <div class="toggle"></div>
 	    </header>
 	    
-	    <video src="videos/100Days_Swril_03.m4v" playinline muted loop autoplay></video>
+	    <video id= "bgVideo" src="videos/100Days_Swril_03.m4v" playinline muted loop autoplay></video>
 	    
 	    <div class="overlay">
 	   </div>
@@ -26,68 +26,71 @@
 	      <h2>100 Days of</h2> 
 	      <h3>Abstract Crap</h3>
 	      <p>I am doing 100 Days of abstract art crap. I will be mostly focusing on particle systems and the abstract effect they create in different 3D software. I might also include sketches, screenshots of the process, animations, or 3D printed sculptures. </p>
-	      <a href="#">My works</a>
+	      <a href="#works">My works</a>
 	    </div>
 	    
 	    <ul class="social">
 	      <li><a href="#"><img src="icons/facebook_pix.png"></a></li>
 	      <li><a href="#"><img src="icons/twitter_pix.png"></a></li>
-	      <li><a href="#"><img src="icons/instagram_pix.png"></a></li>
+	      <li><a href="https://www.instagram.com/100daymons/"><img src="icons/instagram_pix.png"></a></li>
 	    </ul>
    
 
 
 
-  </section>
+  	</section>
   
   <div class="menu">
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="#">Info</a></li>
       <li><a href="#">Projects</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="https://wp.nyu.edu/shanghai-dc/">Blog</a></li>
+      <li><a href="https://www.instagram.com/100daymons/">Contact</a></li>
     </ul>
   </div>
  
 
  <section class="content">
- 	<div class="items">
+
+<!--  
+ 	<a href="https://www.w3schools.com/" id="works" class="items scroll fade-in"> 
+		
   		<img src="https://media.giphy.com/media/faYlsHteZVShMjUqew/giphy.gif" alt="Placeholder kitteh">
 		<div class="tag">		
 			<figcaption>Day 030: Swril</figcaption>
 		</div>
-	</div>	
+	</a>
 
-	<div class="items">
+	<div id="works" class="items scroll fade-in"> 
   		<img src="https://media.giphy.com/media/0rUGI6Aa0aZDqWLlNt/giphy.gif" alt="Placeholder kitteh">
 		<div class="tag">		
 			<figcaption>Day 029: Swril</figcaption>
 		</div>
 	</div>
 
-	<div class="items">
+	<div id="works" class="items scroll fade-in"> 
   		<img src="https://media.giphy.com/media/atbucwna9QGog9L7Fw/giphy.gif" alt="Placeholder kitteh">
 		<div class="tag">		
 			<figcaption>Day 028: Swril</figcaption>
 		</div>
 	</div>
 
-	<div class="items">
+	<div id="works" class="items scroll fade-in"> 
   		<img src="https://media.giphy.com/media/5ARfex9H5MFFB82hTq/giphy.gif" alt="Placeholder kitteh">
 		<div class="tag">		
 			<figcaption>Day 027: Low-Poly Terrain</figcaption>
 		</div>
 	</div>
 
-	<div class="items">
+	<div id="works" class="items scroll fade-in"> 
 		<img src="https://media.giphy.com/media/pHsILgbkLTW6ju9tGc/giphy.gif" alt="Placeholder kitteh">
 		<div class="tag">		
 			<figcaption>Day 026: Low-Poly Cave</figcaption>
 		</div>
 	</div>
 
-	<div class="items">
+	<div id="works" class="items scroll fade-in"> 
 			<img src="https://media.giphy.com/media/FEY3ud3ynMPRPP9hXb/giphy.gif" alt="Placeholder kitteh">
 		<div class="tag">		
 			<figcaption>Day 025: Low-Poly Landscape</figcaption>
@@ -260,21 +263,27 @@
 		<div class="tag">		
 			<figcaption>Day 001</figcaption>
 		</div>
-	</div>
+	</div>  -->
+</section>
  		
-  </section>
-
-   
-<script type="text/javascript">
-	const menuToggle = document.querySelector('.toggle');
-      const showcase = document.querySelector('.showcase');
-
-      menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        showcase.classList.toggle('active');
-      })
-</script>
-
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- contentful apis-->
+  <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+  <script>
+	var exports = {}; // quick fix because 'exports' is not defined in rich-text bundle below
+  </script>
+  <script src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"></script>
+   <!-- mustache api-->
+  <script src="https://unpkg.com/mustache@latest"></script>
+  <script src="script.js"></script>
+  <script>
+	(function(){
+	  app.initialize();
+	  app.getAllEntries();
+	})();
+  </script>
+  
 </body>
 
 </html>
